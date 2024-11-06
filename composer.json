@@ -1,0 +1,17 @@
+{
+    "name": "alexfedosienko/marzban-api",
+    "description": "API library for Mazban server",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AlexFedosienko\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alexfedosienko",
+            "email": "alexfedosienko@gmail.com"
+        }
+    ]
+}
