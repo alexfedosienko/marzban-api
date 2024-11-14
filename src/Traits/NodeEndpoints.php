@@ -7,7 +7,7 @@ use AlexFedosienko\Models\Node;
 trait NodeEndpoints
 {
     /**
-     * Получение списка пользователей из Marzban
+     * Получение списка нод из Marzban
      *
      * @return Array of Node
      */

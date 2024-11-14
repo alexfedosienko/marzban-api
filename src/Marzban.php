@@ -3,6 +3,7 @@
 namespace AlexFedosienko;
 
 use AlexFedosienko\Response;
+use AlexFedosienko\Traits\HostEndpoints;
 use AlexFedosienko\Traits\NodeEndpoints;
 use AlexFedosienko\Traits\UserEndpoints;
 use AlexFedosienko\Exceptions\NotFoundException;
@@ -13,7 +14,8 @@ use AlexFedosienko\Exceptions\UserAlreadyExistsException;
 class Marzban
 {
     use UserEndpoints,
-        NodeEndpoints;
+        NodeEndpoints,
+        HostEndpoints;
 
     protected Request $client;
     protected string $username;
