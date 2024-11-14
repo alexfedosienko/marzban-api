@@ -18,7 +18,7 @@ class User
     public string $status; // => active
     public int $used_traffic;
     public int $lifetime_used_traffic;
-    public string $online_at; // => 2024-11-06T10:27:38
+    public ?string $online_at; // => 2024-11-06T10:27:38
     public string $created_at; // => 2024-05-17T10:24:56
 
     public static function make(array $userJson): User

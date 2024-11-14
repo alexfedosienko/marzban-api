@@ -60,7 +60,7 @@ class Request
     {
         $h = [];
         foreach ($this->headers as $k => $v) {
-            $h[] = $k . ':' . $v;
+            $h[] = $k . ': ' . $v;
         }
 
         return $h;
@@ -86,12 +86,17 @@ class Request
 
     public function post(string $url, array $query = [], array $payload = [], bool $isJson = false): Response
     {
+        if ($isJson) {
+            $payload = json_encode($payload);
+            $this->setHeader('Content-Type', 'application/json');
+        }
+
         curl_setopt_array($this->client, [
             CURLOPT_URL => $this->getHost() . $url . $this->getQuery($query),
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_HTTPHEADER => $this->getHeaders(),
             CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $isJson ? json_encode($payload) : $payload,
+            CURLOPT_POSTFIELDS => $payload,
         ]);
 
         $response = $this->exec();
@@ -110,20 +115,43 @@ class Request
         return $result;
     }
 
-    // public function put()
-    // {
-    //     //
-    // }
+    public function put(string $url, array $query = [], array $payload = [], bool $isJson = false): Response
+    {
+        if ($isJson) {
+            $payload = json_encode($payload);
+            $this->setHeader('Content-Type', 'application/json');
+        }
+
+        curl_setopt_array($this->client, [
+            CURLOPT_URL => $this->getHost() . $url . $this->getQuery($query),
+            CURLOPT_CUSTOMREQUEST => 'PUT',
+            CURLOPT_HTTPHEADER => $this->getHeaders(),
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $payload,
+        ]);
+
+        $response = $this->exec();
+
+        return new Response($response, $this->client);
+    }
 
     // public function patch()
     // {
     //     //
     // }
 
-    // public function delete()
-    // {
-    //     //
-    // }
+    public function delete(string $url, array $query = []): Response
+    {
+        curl_setopt_array($this->client, [
+            CURLOPT_URL => $this->getHost() . $url . $this->getQuery($query),
+            CURLOPT_CUSTOMREQUEST => 'DELETE',
+            CURLOPT_HTTPHEADER => $this->getHeaders(),
+        ]);
+
+        $response = $this->exec();
+
+        return new Response($response, $this->client);
+    }
 
     protected function getQuery(array $query = []): string
     {
