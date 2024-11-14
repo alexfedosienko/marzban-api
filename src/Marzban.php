@@ -3,15 +3,17 @@
 namespace AlexFedosienko;
 
 use AlexFedosienko\Response;
+use AlexFedosienko\Traits\NodeEndpoints;
 use AlexFedosienko\Traits\UserEndpoints;
+use AlexFedosienko\Exceptions\NotFoundException;
 use AlexFedosienko\Exceptions\AuthorizationException;
 use AlexFedosienko\Exceptions\EmptyParameterException;
-use AlexFedosienko\Exceptions\NotFoundException;
 use AlexFedosienko\Exceptions\UserAlreadyExistsException;
 
 class Marzban
 {
-    use UserEndpoints;
+    use UserEndpoints,
+        NodeEndpoints;
 
     protected Request $client;
     protected string $username;
