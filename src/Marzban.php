@@ -11,7 +11,7 @@ use AlexFedosienko\Exceptions\AuthorizationException;
 use AlexFedosienko\Exceptions\EmptyParameterException;
 use AlexFedosienko\Exceptions\UserAlreadyExistsException;
 
-class Marzban
+class Marzban implements MarzbanInterface
 {
     use UserEndpoints,
         NodeEndpoints,
