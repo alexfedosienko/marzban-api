@@ -13,6 +13,12 @@ class Node
     public string $status;
     public ?string $message;
 
+    /**
+     * make
+     *
+     * @param  array $nodeJson
+     * @return Node
+     */
     public static function make(array $nodeJson): Node
     {
         $node = new Node();
@@ -27,6 +33,12 @@ class Node
         return $node;
     }
 
+    /**
+     * makeArrayOfNodes
+     *
+     * @param  array $response
+     * @return Node[]
+     */
     public static function makeArrayOfNodes(array $response): array
     {
         $nodes = [];

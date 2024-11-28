@@ -7,9 +7,9 @@ use AlexFedosienko\MarzbanAPI\Models\Node;
 trait NodeEndpoints
 {
     /**
-     * Получение списка нод из Marzban
+     * getNodes
      *
-     * @return Array of Node
+     * @return Node[]
      */
     public function getNodes(): array
     {

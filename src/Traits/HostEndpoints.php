@@ -7,9 +7,9 @@ use AlexFedosienko\MarzbanAPI\Models\Host;
 trait HostEndpoints
 {
     /**
-     * Получение списка хостов из Marzban
+     * getHosts
      *
-     * @return Array of Host
+     * @return Host[]
      */
     public function getHosts(): array
     {

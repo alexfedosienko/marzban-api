@@ -12,7 +12,20 @@ use AlexFedosienko\MarzbanAPI\Models\Hosts\TrojanWebsocketTLS;
 
 abstract class Host
 {
+    /**
+     * make
+     *
+     * @param  array $hostJson
+     * @return Host
+     */
     abstract public static function make(array $hostJson): Host;
+
+    /**
+     * makeArrayOfHosts
+     *
+     * @param  array $response
+     * @return Host[]
+     */
 
     public static function makeArrayOfHosts(array $response): array
     {

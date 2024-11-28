@@ -22,6 +22,12 @@ class User
     public string $created_at; // => 2024-05-17T10:24:56
     public array $links;
 
+    /**
+     * make
+     *
+     * @param  array $userJson
+     * @return User
+     */
     public static function make(array $userJson): User
     {
         $user = new User();
@@ -39,6 +45,12 @@ class User
         return $user;
     }
 
+    /**
+     * makeArrayOfUsers
+     *
+     * @param  array $response
+     * @return User[]
+     */
     public static function makeArrayOfUsers(array $response): array
     {
         $users = [];

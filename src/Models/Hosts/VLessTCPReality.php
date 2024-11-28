@@ -21,6 +21,12 @@ class VLessTCPReality extends Host
     public ?string $fragment_setting;
     public ?string $random_user_agent;
 
+    /**
+     * make
+     *
+     * @param  array $hostJson
+     * @return Host
+     */
     public static function make(array $hostJson): Host
     {
         $host = new VLessTCPReality();

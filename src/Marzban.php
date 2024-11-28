@@ -36,11 +36,25 @@ class Marzban implements MarzbanInterface
         $this->auth();
     }
 
+    /**
+     * getRequest
+     *
+     * @return Request
+     */
     public function getRequest(): Request
     {
         return $this->client;
     }
 
+    /**
+     * auth
+     *
+     * @throw AuthorizationException
+     * @throw NotFoundException
+     * @throw UserAlreadyExistsException
+     * @throw EmptyParameterException
+     * @return void
+     */
     protected function auth(): void
     {
         $response = $this->getRequest()->post('/api/admin/token', [], [
@@ -57,7 +71,17 @@ class Marzban implements MarzbanInterface
         $this->getRequest()->setHeader('Authorization', 'Bearer ' . $response->getBody()['access_token']);
     }
 
-    protected function checkExceptions(Response $response)
+    /**
+     * checkExceptions
+     *
+     * @param  Response $response
+     * @throw AuthorizationException
+     * @throw NotFoundException
+     * @throw UserAlreadyExistsException
+     * @throw EmptyParameterException
+     * @return void
+     */
+    protected function checkExceptions(Response $response): void
     {
         $body = $response->getBody();
 

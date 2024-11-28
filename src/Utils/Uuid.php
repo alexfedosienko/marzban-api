@@ -4,7 +4,12 @@ namespace AlexFedosienko\MarzbanAPI\Utils;
 
 class Uuid
 {
-    public static function v4()
+    /**
+     * v4
+     *
+     * @return string
+     */
+    public static function v4(): string
     {
         // Generate 16 bytes (128 bits) of random data or use the data passed into the function.
         $data = $data ?? random_bytes(16);

@@ -7,10 +7,13 @@ use AlexFedosienko\MarzbanAPI\Models\User;
 
 trait UserEndpoints
 {
-
     /**
-     * Создание нового пользователя в Marzban
+     * createUser
      *
+     * @param  string $username
+     * @param  string $secret
+     * @param  int $dataLimit
+     * @param  int $expire
      * @return User
      */
     public function createUser(string $username, string $secret = '', $dataLimit = 0, $expire = 0): User
@@ -40,10 +43,11 @@ trait UserEndpoints
         return User::make($response->getBody());
     }
 
+
     /**
-     * Получение списка пользователей из Marzban
+     * getUsers
      *
-     * @return Array of User
+     * @return User[]
      */
     public function getUsers(): array
     {
@@ -52,8 +56,9 @@ trait UserEndpoints
     }
 
     /**
-     * Получение пользователя из Marzban
+     * getUser
      *
+     * @param  string $username
      * @return User
      */
     public function getUser(string $username): User
@@ -63,6 +68,14 @@ trait UserEndpoints
         return User::make($response->getBody());
     }
 
+    /**
+     * updateUser
+     *
+     * @param  string $username
+     * @param  int $dataLimit
+     * @param  int $expire
+     * @return User
+     */
     public function updateUser(string $username, $dataLimit = 0, $expire = 0): User
     {
         $payload = [];
@@ -75,8 +88,9 @@ trait UserEndpoints
     }
 
     /**
-     * Удаления в Marzban
+     * deleteUser
      *
+     * @param  string $username
      * @return Bool
      */
     public function deleteUser(string $username): Bool
