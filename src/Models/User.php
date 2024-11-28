@@ -20,6 +20,7 @@ class User
     public int $lifetime_used_traffic;
     public ?string $online_at; // => 2024-11-06T10:27:38
     public string $created_at; // => 2024-05-17T10:24:56
+    public array $links;
 
     public static function make(array $userJson): User
     {
@@ -34,6 +35,7 @@ class User
         $user->lifetime_used_traffic = $userJson['lifetime_used_traffic'];
         $user->online_at = $userJson['online_at'];
         $user->created_at = $userJson['created_at'];
+        $user->links = array_filter($userJson['links'], fn($link) => $link !== 'False');
         return $user;
     }
 
