@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexFedosienko;
+namespace AlexFedosienko\MarzbanAPI;
 
 class Request
 {

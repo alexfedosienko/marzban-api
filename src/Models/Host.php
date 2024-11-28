@@ -1,13 +1,14 @@
 <?php
 
-namespace AlexFedosienko\Models;
+namespace AlexFedosienko\MarzbanAPI\Models;
 
-use AlexFedosienko\Models\Hosts\VMessTCP;
-use AlexFedosienko\Models\Hosts\ShadowsocksTCP;
-use AlexFedosienko\Models\Hosts\VMessWebsocket;
-use AlexFedosienko\Models\Hosts\VLessTCPReality;
-use AlexFedosienko\Models\Hosts\VLessGRPCReality;
-use AlexFedosienko\Models\Hosts\TrojanWebsocketTLS;
+use AlexFedosienko\MarzbanAPI\Models\Hosts\VMessTCP;
+use AlexFedosienko\MarzbanAPI\Models\Hosts\ShadowsocksTCP;
+use AlexFedosienko\MarzbanAPI\Models\Hosts\VMessWebsocket;
+use AlexFedosienko\MarzbanAPI\Models\Hosts\VLessTCPReality;
+use AlexFedosienko\MarzbanAPI\Models\Hosts\VLessGRPCReality;
+use AlexFedosienko\MarzbanAPI\Models\Hosts\TrojanWebsocketTLS;
+
 
 abstract class Host
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace AlexFedosienko\Traits;
+namespace AlexFedosienko\MarzbanAPI\Traits;
 
-use AlexFedosienko\Utils\Uuid;
-use AlexFedosienko\Models\User;
+use AlexFedosienko\MarzbanAPI\Utils\Uuid;
+use AlexFedosienko\MarzbanAPI\Models\User;
 
 trait UserEndpoints
 {

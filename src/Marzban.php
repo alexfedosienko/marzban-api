@@ -1,15 +1,16 @@
 <?php
 
-namespace AlexFedosienko;
+namespace AlexFedosienko\MarzbanAPI;
 
-use AlexFedosienko\Response;
-use AlexFedosienko\Traits\HostEndpoints;
-use AlexFedosienko\Traits\NodeEndpoints;
-use AlexFedosienko\Traits\UserEndpoints;
-use AlexFedosienko\Exceptions\NotFoundException;
-use AlexFedosienko\Exceptions\AuthorizationException;
-use AlexFedosienko\Exceptions\EmptyParameterException;
-use AlexFedosienko\Exceptions\UserAlreadyExistsException;
+use AlexFedosienko\MarzbanAPI\Request;
+use AlexFedosienko\MarzbanAPI\Response;
+use AlexFedosienko\MarzbanAPI\Traits\HostEndpoints;
+use AlexFedosienko\MarzbanAPI\Traits\NodeEndpoints;
+use AlexFedosienko\MarzbanAPI\Traits\UserEndpoints;
+use AlexFedosienko\MarzbanAPI\Exceptions\NotFoundException;
+use AlexFedosienko\MarzbanAPI\Exceptions\AuthorizationException;
+use AlexFedosienko\MarzbanAPI\Exceptions\EmptyParameterException;
+use AlexFedosienko\MarzbanAPI\Exceptions\UserAlreadyExistsException;
 
 class Marzban implements MarzbanInterface
 {

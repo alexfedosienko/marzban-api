@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexFedosienko\Utils;
+namespace AlexFedosienko\MarzbanAPI\Utils;
 
 class Uuid
 {

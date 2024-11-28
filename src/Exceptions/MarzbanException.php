@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexFedosienko\Exceptions;
+namespace AlexFedosienko\MarzbanAPI\Exceptions;
 
 class MarzbanException extends \Exception
 {
-    // 
+    //
 }

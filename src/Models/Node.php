@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexFedosienko\Models;
+namespace AlexFedosienko\MarzbanAPI\Models;
 
 class Node
 {

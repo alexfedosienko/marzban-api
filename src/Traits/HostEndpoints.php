@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexFedosienko\Traits;
+namespace AlexFedosienko\MarzbanAPI\Traits;
 
-use AlexFedosienko\Models\Host;
+use AlexFedosienko\MarzbanAPI\Models\Host;
 
 trait HostEndpoints
 {

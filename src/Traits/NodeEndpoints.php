@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexFedosienko\Traits;
+namespace AlexFedosienko\MarzbanAPI\Traits;
 
-use AlexFedosienko\Models\Node;
+use AlexFedosienko\MarzbanAPI\Models\Node;
 
 trait NodeEndpoints
 {

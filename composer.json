@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "AlexFedosienko\\": "src/"
+            "AlexFedosienko\\MarzbanAPI\\": "src/"
         }
     },
     "authors": [

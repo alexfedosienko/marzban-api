@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexFedosienko\Models\Hosts;
+namespace AlexFedosienko\MarzbanAPI\Models\Hosts;
 
-use AlexFedosienko\Models\Host;
+use AlexFedosienko\MarzbanAPI\Models\Host;
 
 class VMessWebsocket extends Host
 {

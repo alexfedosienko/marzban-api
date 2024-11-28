@@ -1,10 +1,8 @@
 <?php
 
-namespace AlexFedosienko\Exceptions;
-
-use AlexFedosienko\Exceptions\MarzbanException;
+namespace AlexFedosienko\MarzbanAPI\Exceptions;
 
 class EmptyParameterException extends MarzbanException
 {
-    // 
+    //
 }
