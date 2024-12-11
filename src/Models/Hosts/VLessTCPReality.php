@@ -73,11 +73,11 @@ class VLessTCPReality extends Host
         ], $params);
 
         if (empty($params['pbk'])) {
-            throw new EmptyParameterException('Не указан pbk');
+            throw new EmptyParameterException('Не указан pbk в массиве params');
         }
 
         if (empty($params['port']) && empty($this->port)) {
-            throw new EmptyParameterException('Не указан port');
+            throw new EmptyParameterException('Не указан port в массиве params');
         }
 
         return 'vless://' . $secret . '@' . $this->address . ':' . ($this->port ? $this->port : $params['port']) . '?' . http_build_query($params) . '#' . rawurlencode($this->remark . $afterRemark);
