@@ -21,6 +21,17 @@ abstract class Host
     abstract public static function make(array $hostJson): Host;
 
     /**
+     * toUrl
+     *
+     * @param  string $secret
+     * @param  string $afterRemark
+     * @param  array $params
+     *
+     * @return string
+     */
+    abstract public function toUrl(string $secret, string $afterRemark = '', array $params = []): string;
+
+    /**
      * makeArrayOfHosts
      *
      * @param  array $response

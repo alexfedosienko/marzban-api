@@ -16,4 +16,18 @@ class VMessTCP extends Host
     {
         throw new \Exception('Not implemented');
     }
+
+    /**
+     * toUrl
+     *
+     * @param  string $secret
+     * @param  string $afterRemark
+     * @param  array $params
+     *
+     * @return string
+     */
+    public function toUrl(string $secret, string $afterRemark = '', array $params = []): string
+    {
+        throw new \Exception('Not implemented');
+    }
 }
