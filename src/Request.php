@@ -7,6 +7,7 @@ class Request
     protected string $host;
     protected array $headers = [];
     protected $client = null;
+    protected int $timeout = 10;
 
     public function __construct()
     {
@@ -20,6 +21,7 @@ class Request
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_TIMEOUT => $this->getTimeout(),
         ]);
     }
 
@@ -220,6 +222,16 @@ class Request
     {
         if (sizeof($query) > 0) return '?' . http_build_query($query);
         return '';
+    }
+
+    /**
+     * getTimeout
+     *
+     * @return int
+     */
+    protected function getTimeout(): int
+    {
+        return $this->timeout;
     }
 
     public function __destruct()
