@@ -229,9 +229,21 @@ class Request
      *
      * @return int
      */
-    protected function getTimeout(): int
+    public function getTimeout(): int
     {
         return $this->timeout;
+    }
+
+    /**
+     * setTimeout
+     *
+     * @param  int $timeout
+     * @return Request
+     */
+    public function setTimeout(int $timeout): Request
+    {
+        $this->timeout = $timeout;
+        return $this;
     }
 
     public function __destruct()
