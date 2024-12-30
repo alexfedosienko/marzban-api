@@ -2,6 +2,8 @@
 
 namespace AlexFedosienko\MarzbanAPI;
 
+use AlexFedosienko\MarzbanAPI\Exceptions\RequestException;
+
 class Request
 {
     protected string $host;
@@ -14,7 +16,7 @@ class Request
         $this->client = curl_init();
 
         if (!$this->client) {
-            throw new \Exception('Curl isn\'t install');
+            throw new RequestException('Curl isn\'t install');
         }
 
         curl_setopt_array($this->client, [
@@ -152,7 +154,7 @@ class Request
         $result = curl_exec($this->client);
 
         if ($result === false) {
-            throw new \Exception(curl_error($this->client));
+            throw new RequestException(curl_error($this->client));
         }
 
         return $result;
