@@ -32,8 +32,6 @@ class Marzban implements MarzbanInterface
 
         if (empty($password)) throw new EmptyParameterException('Password is empty');
         $this->password = $password;
-
-        $this->auth();
     }
 
     /**
@@ -55,7 +53,7 @@ class Marzban implements MarzbanInterface
      * @throw EmptyParameterException
      * @return void
      */
-    protected function auth(): void
+    public function auth(): void
     {
         $response = $this->getRequest()->post('/api/admin/token', [], [
             'username' => $this->username,
